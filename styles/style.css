@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("../assets/fonts/AmazonEmber.woff") format("woff");
+}
 :root {
   --primary-color: #f3a847;
   --secondary-color: #dadada;
+  --grey: #565959;
+  --linkcolor: rgb(26, 141, 129);
+  --linkcolorHover: #c7511f;
+  --money: #b12704;
   --max-width: 1400px;
 }
 
@@ -10,9 +18,48 @@
   padding: 0;
   max-width: 100%;
 }
+body {
+  font-family: "Amazon Ember", serif;
+}
+.regularSizeNav {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Amazon Ember", serif;
+}
+.boldSizeNav {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 15px;
+  font-family: "Amazon Ember", serif;
+}
+.regularSize {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Amazon Ember", serif;
+}
+.smallSize {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Amazon Ember", serif;
+}
+.boldSize {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Amazon Ember", serif;
+}
 
 a {
   text-decoration: none;
+  font-family: "Amazon Ember", serif;
 }
 
 .container {
@@ -162,16 +209,25 @@ a {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  position: relative;
 }
 .cartAndCounter {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: nowrap;
   flex-direction: column;
+  position: relative;
 }
 .cartCounter {
   text-align: center;
   color: var(--primary-color);
+  position: absolute;
+  top: -6px;
+  right: 11px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
 }
 .allCont:hover,
 .nextToNavText:hover,
@@ -211,6 +267,10 @@ a {
 }
 .allContText {
   padding: 0px 5px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 12px;
 }
 .nextToNavText a {
   color: white;
@@ -218,6 +278,10 @@ a {
 .nextToNavText {
   padding: 5px;
   border: 1px solid transparent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
 }
 .cyberMondeyIcon {
   background: url("../assets/img/Fuji_BF_ILM_1X._CB652848759_.jpg") no-repeat
@@ -226,14 +290,14 @@ a {
   height: 6vh;
 }
 .links a {
-  color: black;
+  color: var(--grey);
   border-bottom: 1px solid transparent;
 }
 .links {
   padding: 7px 20px;
 }
 .links a:hover {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--grey);
 }
 .middleCont {
   display: flex;
@@ -271,6 +335,47 @@ a {
   width: 7px;
   height: 4px;
 }
+
+.qtyBtnCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 1px 2px;
+  width: 4vw;
+  border-radius: 8px;
+  background-color: rgb(248, 248, 248);
+}
+.addCart {
+  width: 18vw;
+  padding: 4px 0;
+  margin: 14px 0;
+  border-radius: 14px;
+  background-color: #d8b931;
+  text-align: center;
+}
+.addCart:hover {
+  background-color: #f7ca00;
+}
+.buyNow {
+  width: 18vw;
+  padding: 4px 0;
+  margin: 14px 0;
+  border-radius: 14px;
+  background-color: #ce8b39;
+  text-align: center;
+}
+.buyNow:hover {
+  background-color: #fa8800;
+}
+.qtyBtnCont:hover {
+  background-color: #b8b4b47e;
+  transition: all 0.3s ease-in;
+}
+.priceStock {
+  padding-bottom: 20px;
+}
 .downArrowCont {
   padding-left: 7px;
 }
@@ -290,6 +395,46 @@ a {
   padding: 5px 0px;
   border-bottom: 1px solid var(--secondary-color);
 }
+.Card div span,
+.Card div a,
+.priceDeliverCont a,
+.descrpCompr a,
+.descrpPrice2 a,
+.rating a,
+.descrpLink a {
+  color: var(--linkcolor);
+}
+.Card div a:hover,
+.descrpCompr a:hover,
+.rating a:hover,
+.descrpLink a:hover {
+  color: var(--linkcolorHover);
+  border-bottom: 1px solid var(--linkcolorHover);
+}
+.priceDeliverCont a:hover,
+.descrpPrice2 a:hover {
+  color: var(--linkcolorHover);
+}
+.priceDeliverCont {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.buyNow,
+.addCart {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+}
+.priceStock {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #007600;
+}
 .descrpBrand,
 .descrpStyle {
   padding: 13px 0px;
@@ -298,10 +443,46 @@ a {
 .descrpAbout ul {
   padding-left: 20px;
 }
-
-.descrpAbout h4 {
-  padding: 13px 0px;
+.descrpHeader {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
 }
+.cardPrice,
+.descrpPrice span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--money);
+}
+
+.descrpPrice2,
+.descrpPrice {
+  color: var(--grey);
+  padding: 5px 0px;
+}
+.descrpPrice2 span {
+  color: black;
+}
+.descrpBrand span {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.descrpAbout p {
+  padding: 13px 0px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+.descrpBrand {
+  border-top: 1px solid var(--secondary-color);
+}
+
 .priceShippingCont {
   display: flex;
   align-items: center;
@@ -320,6 +501,7 @@ a {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  padding-bottom: 20px;
 }
 
 .priceDeliverCont a {
@@ -367,6 +549,9 @@ a {
   justify-content: center;
   flex-wrap: nowrap;
   padding: 10px;
+}
+.photoContText {
+  color: var(--grey);
 }
 .photoCont {
   display: flex;
@@ -442,7 +627,7 @@ a {
   border-top: 1px solid var(--secondary-color);
 }
 .caruselaCont {
-  padding: 0px 20px;
+  padding: 30px 20px;
   margin: 20px;
   border-bottom: 1px solid var(--secondary-color);
 }
@@ -566,4 +751,19 @@ a {
   justify-content: flex-start;
   flex-wrap: nowrap;
   gap: 2px 40px;
+}
+.topCarusela h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  color: #cc6600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.topCarusela h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--grey);
 }
